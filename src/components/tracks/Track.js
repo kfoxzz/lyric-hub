@@ -4,14 +4,14 @@ import { Link } from "react-router-dom";
 function Track(props) {
   const { track } = props;
 
-   function truncateArtist(artist_name) {
-       let artist = artist_name;
-        if (artist.length > 40) {
-            return artist.slice(0, 40) + '...'
-        } else {
-            return artist;
-        }
+  function truncateArtist(artist_name) {
+    let artist = artist_name;
+    if (artist.length > 40) {
+      return artist.slice(0, 40) + "...";
+    } else {
+      return artist;
     }
+  }
 
   return (
     <div className="col-md-6">
