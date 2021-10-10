@@ -29,6 +29,7 @@ class Lyrics extends Component {
 
   render() {
     const { track, lyrics } = this.state;
+    console.log(track);
 
     if (
       track === undefined ||
@@ -40,10 +41,10 @@ class Lyrics extends Component {
     } else {
       return (
         <React.Fragment>
-          <Link to="/" className="btn btn-dark btn-sm mb-4">
+          <Link to="/" className="btn btn-pink btn-sm mb-4">
             Go Back
           </Link>
-          <h5 className="card">
+          <h5 className="card bg-lighter-purple">
             <div className="card-header">
               {track.track_name} by{" "}
               <span className="text-secondary">{track.artist_name}</span>
@@ -54,18 +55,19 @@ class Lyrics extends Component {
           </div>
 
           <ul className="list-group mt-3">
-            <li className="list-group-item">
+            <li className="list-group-item bg-lighter-purple">
               <strong>Album ID</strong>: {track.album_id}
             </li>
-            <li className="list-group-item">
+            <li className="list-group-item bg-lighter-purple">
               <strong>Song Genre</strong>:{" "}
-              {
-                track.primary_genres.music_genre_list[0].music_genre
-                  .music_genre_name
-              }
+              {track.primary_genres.music_genre_list.length === 0
+                ? "N/A"
+                : track.primary_genres.music_genre_list[0].music_genre
+                    .music_genre_name}
             </li>
-            <li className="list-group-item">
-              <strong>Explicit Words</strong>: {track.explicit === 0 ? "No" : "Yes"}
+            <li className="list-group-item bg-lighter-purple">
+              <strong>Explicit Words</strong>:{" "}
+              {track.explicit === 0 ? "No" : "Yes"}
             </li>
           </ul>
         </React.Fragment>

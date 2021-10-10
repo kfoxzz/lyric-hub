@@ -1,0 +1,40 @@
+@import "~bootstrap/scss/bootstrap";
+
+// Create your own map
+$custom-colors: (
+  "dark-red": #900
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+.pink {
+  color: $pink-300;
+}
+
+.dark-purple {
+    color: $indigo-600
+}
+
+.btn-purple {
+    color: white;
+    background-color: $indigo-600;
+}
+
+.btn-gray {
+    color: white;
+    background-color: $gray-700;
+}
+
+.btn-pink {
+    color: white;
+    background-color: $pink-500;
+}
+
+.bg-light-purple {
+    background-color: $purple-200;
+}
+
+.bg-lighter-purple {
+    background-color: $purple-100;
+}

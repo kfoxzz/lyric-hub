@@ -7,19 +7,21 @@ import Lyrics from "./components/tracks/Lyrics";
 
 import { Provider } from './context';
 
-import "./App.css";
+import "./App.scss";
 
 function App() {
   return (
     <Provider>
       <Router>
         <React.Fragment>
-          <Navbar />
-          <div className="container">
-            <Switch>
-              <Route exact path="/" component={Index} />
-              <Route exact path="/lyrics/track/:id" component={Lyrics} />
-            </Switch>
+          <div className="bg-light-purple" style={{ minHeight: '100vh' }}>
+            <Navbar />
+            <div className="container">
+              <Switch>
+                <Route exact path="/" component={Index} />
+                <Route exact path="/lyrics/track/:id" component={Lyrics} />
+              </Switch>
+            </div>
           </div>
         </React.Fragment>
       </Router>

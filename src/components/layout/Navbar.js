@@ -2,7 +2,7 @@ import React from "react";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-dark bg-dark mb-5">
+    <nav className="navbar bg-light dark-purple sticky-top mb-4">
       <span className="navbar-brand mb-0 h1 mx-auto">LyricHub</span>
     </nav>
   );
