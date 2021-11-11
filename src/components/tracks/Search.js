@@ -15,16 +15,16 @@ class Search extends Component {
     e.preventDefault();
     axios
       .get(
-        `http://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=10&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`
+        `https://thingproxy.freeboard.io/fetch/http://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=10&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`
       )
-      .then((res) => {
+      .then(res => {
         dispatch({
-            type: 'SEARCH_TRACKS',
-            payload: res.data.message.body.track_list
+          type: 'SEARCH_TRACKS',
+          payload: res.data.message.body.track_list,
         });
         this.setState({ trackTitle: '' });
       })
-      .catch((err) => console.log(err));
+      .catch(err => console.log(err));
   };
 
   render() {
